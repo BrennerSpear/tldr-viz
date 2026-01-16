@@ -15,10 +15,141 @@ import {
   IconStack2,
   IconPlayerPlay,
   IconLeaf,
+  IconSparkles,
+  IconLoader2,
 } from "@tabler/icons-react";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
-import type { StructureData, CallsData, ArchData, ViewType } from "@/lib/types";
+import type { StructureData, CallsData, ArchData, ViewType, ClassificationsData, EntryPointClassification } from "@/lib/types";
+
+interface EntryPointsListProps {
+  classifications: EntryPointClassification[];
+  selectedEntryPoint: string | null;
+  setSelectedEntryPoint: (entryPoint: string | null) => void;
+  showOnlyUserFacing: boolean;
+  setShowOnlyUserFacing: (show: boolean) => void;
+}
+
+function EntryPointsList({
+  classifications,
+  selectedEntryPoint,
+  setSelectedEntryPoint,
+  showOnlyUserFacing,
+  setShowOnlyUserFacing,
+}: EntryPointsListProps) {
+  const userFacing = classifications.filter((c) => c.isUserFacing);
+  const notUserFacing = classifications.filter((c) => !c.isUserFacing);
+
+  return (
+    <div className="space-y-2">
+      <div className="flex items-center justify-between">
+        <Label className="text-sm font-medium">
+          User-facing ({userFacing.length})
+        </Label>
+        <Switch
+          id="user-facing"
+          checked={showOnlyUserFacing}
+          onCheckedChange={setShowOnlyUserFacing}
+        />
+      </div>
+
+      {/* User-facing entries */}
+      <div className="space-y-1 max-h-48 overflow-auto">
+        {userFacing.map((c) => {
+          const key = `${c.file}::${c.function}`;
+          const isSelected = selectedEntryPoint === key;
+          return (
+            <button
+              type="button"
+              key={key}
+              onClick={() => setSelectedEntryPoint(isSelected ? null : key)}
+              className={`w-full text-left p-2 rounded-md text-xs transition-colors ${
+                isSelected
+                  ? "bg-primary text-primary-foreground"
+                  : "bg-muted/50 hover:bg-muted"
+              }`}
+            >
+              <div className="flex items-center gap-1">
+                <IconPlayerPlay size={12} className={isSelected ? "" : "text-green-600"} />
+                <span className="font-medium">{c.function}</span>
+                <Badge variant="outline" className="text-[10px] px-1 py-0 h-4">
+                  {c.type}
+                </Badge>
+              </div>
+              <p className="text-[10px] opacity-70 mt-0.5 line-clamp-1">
+                {c.description}
+              </p>
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Non-user-facing entries (collapsed by default) */}
+      {!showOnlyUserFacing && notUserFacing.length > 0 && (
+        <details className="text-xs">
+          <summary className="cursor-pointer text-muted-foreground hover:text-foreground py-1">
+            Other entries ({notUserFacing.length})
+          </summary>
+          <div className="space-y-1 mt-1 max-h-32 overflow-auto">
+            {notUserFacing.map((c) => {
+              const key = `${c.file}::${c.function}`;
+              const isSelected = selectedEntryPoint === key;
+              return (
+                <button
+                  type="button"
+                  key={key}
+                  onClick={() => setSelectedEntryPoint(isSelected ? null : key)}
+                  className={`w-full text-left p-1.5 rounded text-[10px] transition-colors ${
+                    isSelected
+                      ? "bg-primary text-primary-foreground"
+                      : "hover:bg-muted/50"
+                  }`}
+                >
+                  <span className="font-medium">{c.function}</span>
+                  <span className="text-muted-foreground ml-1">({c.type})</span>
+                </button>
+              );
+            })}
+          </div>
+        </details>
+      )}
+    </div>
+  );
+}
+
+interface SelectedEntryPointCardProps {
+  classification: EntryPointClassification;
+  onClear: () => void;
+}
+
+function SelectedEntryPointCard({ classification, onClear }: SelectedEntryPointCardProps) {
+  return (
+    <Card className="bg-muted/50 border-primary/50">
+      <CardContent className="p-3 space-y-1">
+        <div className="flex items-center justify-between">
+          <span className="font-medium text-sm">{classification.function}</span>
+          <Button
+            variant="ghost"
+            size="sm"
+            className="h-6 px-2 text-xs"
+            onClick={onClear}
+          >
+            Clear
+          </Button>
+        </div>
+        <p className="text-xs">{classification.description}</p>
+        {classification.userAction && (
+          <p className="text-xs text-muted-foreground italic">
+            {classification.userAction}
+          </p>
+        )}
+        <p className="text-[10px] text-muted-foreground truncate">
+          {classification.file}
+        </p>
+      </CardContent>
+    </Card>
+  );
+}
 
 export default function Home() {
   const {
@@ -27,23 +158,32 @@ export default function Home() {
     structureData,
     callsData,
     archData,
+    classificationsData,
     setStructureData,
     setCallsData,
     setArchData,
+    setClassificationsData,
     hideTests,
     setHideTests,
     selectedEntryPoint,
     setSelectedEntryPoint,
+    showOnlyUserFacing,
+    setShowOnlyUserFacing,
+    isAnalyzing,
+    setIsAnalyzing,
+    analysisError,
+    setAnalysisError,
   } = useGraphStore();
 
   // Load demo data on mount
   useEffect(() => {
     async function loadDemoData() {
       try {
-        const [structureRes, callsRes, archRes] = await Promise.all([
+        const [structureRes, callsRes, archRes, classificationsRes] = await Promise.all([
           fetch("/data/clarity/structure.json"),
           fetch("/data/clarity/calls.json"),
           fetch("/data/clarity/arch.json"),
+          fetch("/data/clarity/classifications.json"),
         ]);
 
         if (structureRes.ok) {
@@ -58,13 +198,61 @@ export default function Home() {
           const data = (await archRes.json()) as ArchData;
           setArchData(data);
         }
+        if (classificationsRes.ok) {
+          const data = (await classificationsRes.json()) as ClassificationsData;
+          setClassificationsData(data);
+        }
       } catch (e) {
         console.log("Demo data not available, use file upload");
       }
     }
 
     loadDemoData();
-  }, [setStructureData, setCallsData, setArchData]);
+  }, [setStructureData, setCallsData, setArchData, setClassificationsData]);
+
+  // Analyze entry points with LLM
+  const analyzeEntryPoints = useCallback(async () => {
+    if (!archData || !callsData) return;
+
+    setIsAnalyzing(true);
+    setAnalysisError(null);
+
+    try {
+      const response = await fetch("/api/classify-entries", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          entries: archData.entry_layer,
+          calls: callsData.edges,
+        }),
+      });
+
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.error || "Analysis failed");
+      }
+
+      const data = await response.json();
+      const newClassificationsData: ClassificationsData = {
+        classifications: data.classifications,
+        analyzedAt: new Date().toISOString(),
+      };
+      setClassificationsData(newClassificationsData);
+
+      // Save to file for persistence (non-critical, just log errors)
+      fetch("/api/save-classifications", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newClassificationsData),
+      }).catch((err) => {
+        console.error("Failed to save classifications:", err);
+      });
+    } catch (error) {
+      setAnalysisError(error instanceof Error ? error.message : "Analysis failed");
+    } finally {
+      setIsAnalyzing(false);
+    }
+  }, [archData, callsData, setClassificationsData, setIsAnalyzing, setAnalysisError]);
 
   const handleFileUpload = useCallback(
     async (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -167,27 +355,62 @@ export default function Home() {
           </div>
 
           {archData && archData.entry_layer.length > 0 && (
-            <div className="space-y-2">
-              <Label htmlFor="entry-point" className="text-sm">Entry point flow</Label>
-              <select
-                id="entry-point"
-                value={selectedEntryPoint || "all"}
-                onChange={(e) => setSelectedEntryPoint(e.target.value === "all" ? null : e.target.value)}
-                className="w-full h-9 rounded-md border border-input bg-background px-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-              >
-                <option value="all">Show all functions</option>
-                {archData.entry_layer.map((entry) => {
-                  const key = `${entry.file}::${entry.function}`;
-                  return (
-                    <option key={key} value={key}>
-                      {entry.function}
-                    </option>
-                  );
-                })}
-              </select>
-              <p className="text-xs text-muted-foreground">
-                Filter to show only calls from an entry point
-              </p>
+            <div className="space-y-3">
+              {/* Analyze Entry Points Button */}
+              <div className="space-y-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="w-full gap-2"
+                  onClick={analyzeEntryPoints}
+                  disabled={isAnalyzing || !archData || !callsData}
+                >
+                  {isAnalyzing ? (
+                    <>
+                      <IconLoader2 size={14} className="animate-spin" />
+                      Analyzing...
+                    </>
+                  ) : (
+                    <>
+                      <IconSparkles size={14} />
+                      {classificationsData ? "Re-analyze" : "Analyze Entry Points"}
+                    </>
+                  )}
+                </Button>
+                {analysisError && (
+                  <p className="text-xs text-destructive">{analysisError}</p>
+                )}
+                {classificationsData && (
+                  <p className="text-xs text-muted-foreground">
+                    Analyzed {classificationsData.classifications.length} entries
+                  </p>
+                )}
+              </div>
+
+              {/* User-facing entry points list */}
+              {classificationsData && (
+                <EntryPointsList
+                  classifications={classificationsData.classifications}
+                  selectedEntryPoint={selectedEntryPoint}
+                  setSelectedEntryPoint={setSelectedEntryPoint}
+                  showOnlyUserFacing={showOnlyUserFacing}
+                  setShowOnlyUserFacing={setShowOnlyUserFacing}
+                />
+              )}
+
+              {/* Show selected entry point details */}
+              {selectedEntryPoint && classificationsData && (() => {
+                const classification = classificationsData.classifications.find(
+                  (c) => `${c.file}::${c.function}` === selectedEntryPoint
+                );
+                if (!classification) return null;
+                return (
+                  <SelectedEntryPointCard
+                    classification={classification}
+                    onClear={() => setSelectedEntryPoint(null)}
+                  />
+                );
+              })()}
             </div>
           )}
         </div>

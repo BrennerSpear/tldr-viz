@@ -1,0 +1,185 @@
+{
+  "classifications": [
+    {
+      "file": "test-pipeline.ts",
+      "function": "main",
+      "isUserFacing": false,
+      "type": "test",
+      "description": "Main function for testing the pipeline by parsing Docker Compose and rendering to PNG.",
+      "userAction": null,
+      "confidence": 0.9
+    },
+    {
+      "file": "packages/core/src/config/index.ts",
+      "function": "hasApiKey",
+      "isUserFacing": false,
+      "type": "internal",
+      "description": "Checks if an API key is configured by calling getApiKey.",
+      "userAction": null,
+      "confidence": 0.8
+    },
+    {
+      "file": "packages/cli/src/utils/output.ts",
+      "function": "formatRunSummary",
+      "isUserFacing": false,
+      "type": "internal",
+      "description": "Formats a run summary by formatting individual step results for CLI output.",
+      "userAction": null,
+      "confidence": 0.8
+    },
+    {
+      "file": "packages/core/src/pipeline/storage.ts",
+      "function": "loadParsedGraph",
+      "isUserFacing": false,
+      "type": "internal",
+      "description": "Loads a parsed graph from storage using the run directory.",
+      "userAction": null,
+      "confidence": 0.8
+    },
+    {
+      "file": "packages/core/src/pipeline/storage.ts",
+      "function": "loadExcalidrawFile",
+      "isUserFacing": false,
+      "type": "internal",
+      "description": "Loads an Excalidraw file from storage using the run directory.",
+      "userAction": null,
+      "confidence": 0.8
+    },
+    {
+      "file": "packages/core/src/pipeline/index.ts",
+      "function": "runPipeline",
+      "isUserFacing": true,
+      "type": "cli-command",
+      "description": "Runs the complete pipeline including parse, generate, layout, and enhance steps.",
+      "userAction": "runs CLI command that executes the full pipeline",
+      "confidence": 0.9
+    },
+    {
+      "file": "packages/core/src/excalidraw/render.ts",
+      "function": "renderAllResolutions",
+      "isUserFacing": false,
+      "type": "internal",
+      "description": "Renders diagrams at all available resolutions by calling renderAtResolution.",
+      "userAction": null,
+      "confidence": 0.8
+    },
+    {
+      "file": "packages/core/src/pipeline/storage.ts",
+      "function": "loadElkOutput",
+      "isUserFacing": false,
+      "type": "internal",
+      "description": "Loads ELK layout output from storage using the run directory.",
+      "userAction": null,
+      "confidence": 0.8
+    },
+    {
+      "file": "packages/core/src/pipeline/index.ts",
+      "function": "runStep",
+      "isUserFacing": true,
+      "type": "cli-command",
+      "description": "Runs individual pipeline steps (parse, generate, layout, enhance) based on configuration.",
+      "userAction": "runs CLI command to execute specific pipeline step",
+      "confidence": 0.9
+    },
+    {
+      "file": "packages/core/src/pipeline/storage.ts",
+      "function": "loadMermaidFile",
+      "isUserFacing": false,
+      "type": "internal",
+      "description": "Loads a Mermaid file from storage using the run directory.",
+      "userAction": null,
+      "confidence": 0.8
+    },
+    {
+      "file": "packages/core/src/pipeline/storage.ts",
+      "function": "writeSourceFile",
+      "isUserFacing": false,
+      "type": "internal",
+      "description": "Writes a source file to storage after ensuring project directories exist.",
+      "userAction": null,
+      "confidence": 0.8
+    },
+    {
+      "file": "packages/core/src/pipeline/storage.ts",
+      "function": "loadPngFile",
+      "isUserFacing": false,
+      "type": "internal",
+      "description": "Loads a PNG file from storage using the PNG file path.",
+      "userAction": null,
+      "confidence": 0.8
+    },
+    {
+      "file": "packages/core/src/pipeline/storage.ts",
+      "function": "getLatestRun",
+      "isUserFacing": false,
+      "type": "internal",
+      "description": "Gets the latest pipeline run by listing all runs and returning the most recent.",
+      "userAction": null,
+      "confidence": 0.8
+    },
+    {
+      "file": "packages/core/src/pipeline/storage.ts",
+      "function": "loadElkInput",
+      "isUserFacing": false,
+      "type": "internal",
+      "description": "Loads ELK layout input from storage using the run directory.",
+      "userAction": null,
+      "confidence": 0.8
+    },
+    {
+      "file": "packages/core/src/excalidraw/validate.ts",
+      "function": "isValidExcalidraw",
+      "isUserFacing": false,
+      "type": "internal",
+      "description": "Validates if an Excalidraw diagram is valid by calling validateExcalidraw.",
+      "userAction": null,
+      "confidence": 0.8
+    },
+    {
+      "file": "packages/core/src/config/index.ts",
+      "function": "saveConfig",
+      "isUserFacing": false,
+      "type": "internal",
+      "description": "Saves configuration to file using the config path.",
+      "userAction": null,
+      "confidence": 0.8
+    },
+    {
+      "file": "scripts/validate-output.ts",
+      "function": "main",
+      "isUserFacing": false,
+      "type": "test",
+      "description": "Main function for validating Excalidraw output in a test script.",
+      "userAction": null,
+      "confidence": 0.9
+    },
+    {
+      "file": "packages/core/src/pipeline/validate.ts",
+      "function": "validateDiagramFromFile",
+      "isUserFacing": false,
+      "type": "internal",
+      "description": "Validates a diagram loaded from a file by calling validateDiagram.",
+      "userAction": null,
+      "confidence": 0.8
+    },
+    {
+      "file": "packages/core/src/excalidraw/render.ts",
+      "function": "calculateArrowPath",
+      "isUserFacing": false,
+      "type": "internal",
+      "description": "Calculates the path for arrows between nodes using orthogonal pathfinding and connection points.",
+      "userAction": null,
+      "confidence": 0.8
+    },
+    {
+      "file": "packages/core/src/output/png.ts",
+      "function": "renderExcalidrawAutoFit",
+      "isUserFacing": false,
+      "type": "internal",
+      "description": "Renders Excalidraw diagrams to PNG with automatic fitting by calculating bounding box.",
+      "userAction": null,
+      "confidence": 0.8
+    }
+  ],
+  "analyzedAt": "2026-01-16T08:10:00.984Z"
+}
