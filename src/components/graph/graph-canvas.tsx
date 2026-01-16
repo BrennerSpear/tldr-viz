@@ -35,6 +35,8 @@ export function GraphCanvas() {
     selectedNodeId,
     hideTests,
     selectedEntryPoint,
+    hideUtilities,
+    utilityThreshold,
   } = useGraphStore();
 
   // Transform data based on active view
@@ -47,6 +49,8 @@ export function GraphCanvas() {
         hideTests,
         archData,
         selectedEntryPoint,
+        hideUtilities,
+        utilityThreshold,
       });
       nodes = result.nodes;
       edges = result.edges;
@@ -61,7 +65,7 @@ export function GraphCanvas() {
     }
 
     return { initialNodes: nodes, initialEdges: edges };
-  }, [activeView, structureData, callsData, archData, hideTests, selectedEntryPoint]);
+  }, [activeView, structureData, callsData, archData, hideTests, selectedEntryPoint, hideUtilities, utilityThreshold]);
 
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);

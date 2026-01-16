@@ -26,6 +26,8 @@ export interface TransformOptions {
   hideTests?: boolean;
   archData?: ArchData | null;
   selectedEntryPoint?: string | null; // Filter to show only call chain from this entry point
+  hideUtilities?: boolean; // Filter to hide utility functions
+  utilityThreshold?: number; // Functions with callCount > threshold are utilities
 }
 
 export function transformCallsToGraph(
@@ -35,7 +37,13 @@ export function transformCallsToGraph(
   nodes: Node[];
   edges: Edge[];
 } {
-  const { hideTests = false, archData = null, selectedEntryPoint = null } = options;
+  const {
+    hideTests = false,
+    archData = null,
+    selectedEntryPoint = null,
+    hideUtilities = false,
+    utilityThreshold = 1,
+  } = options;
 
   // Build sets of entry and leaf functions for quick lookup
   const entryFunctions = new Set<string>();
@@ -115,6 +123,16 @@ export function transformCallsToGraph(
     functionCallCounts.set(toKey, (functionCallCounts.get(toKey) || 0) + 1);
   }
 
+  // Identify utility functions (called more than threshold times)
+  const utilityFunctions = new Set<string>();
+  if (hideUtilities) {
+    for (const [funcId, count] of functionCallCounts) {
+      if (count > utilityThreshold) {
+        utilityFunctions.add(funcId);
+      }
+    }
+  }
+
   let nodes: Node[] = [];
   let edges: Edge[] = [];
 
@@ -122,6 +140,12 @@ export function transformCallsToGraph(
   for (const [file, functions] of fileMap) {
     for (const func of functions) {
       const nodeId = `${file}::${func}`;
+
+      // Skip utility functions if filter is enabled
+      if (utilityFunctions.has(nodeId)) {
+        continue;
+      }
+
       const callCount = functionCallCounts.get(nodeId) || 0;
       const isEntry = entryFunctions.has(nodeId);
       const isLeaf = leafFunctions.has(nodeId);
@@ -148,6 +172,12 @@ export function transformCallsToGraph(
   for (const edge of filteredEdges) {
     const sourceId = `${edge.from_file}::${edge.from_func}`;
     const targetId = `${edge.to_file}::${edge.to_func}`;
+
+    // Skip edges involving utility functions
+    if (utilityFunctions.has(sourceId) || utilityFunctions.has(targetId)) {
+      continue;
+    }
+
     const edgeKey = `${sourceId}->${targetId}`;
 
     if (!edgeSet.has(edgeKey)) {
@@ -160,6 +190,41 @@ export function transformCallsToGraph(
         style: { stroke: "#60a5fa", strokeWidth: 2 },
       });
     }
+  }
+
+  // After filtering utilities, remove orphaned nodes not reachable from any entry point
+  if (hideUtilities && entryFunctions.size > 0) {
+    // Build adjacency from current edges
+    const adjacency = new Map<string, string[]>();
+    for (const edge of edges) {
+      if (!adjacency.has(edge.source)) adjacency.set(edge.source, []);
+      adjacency.get(edge.source)!.push(edge.target);
+    }
+
+    // Find all nodes reachable from entry points
+    const nodeIds = new Set(nodes.map((n) => n.id));
+    const entryNodesInGraph = [...entryFunctions].filter((e) => nodeIds.has(e));
+
+    const reachable = new Set<string>(entryNodesInGraph);
+    let changed = true;
+    while (changed) {
+      changed = false;
+      for (const node of reachable) {
+        const neighbors = adjacency.get(node) || [];
+        for (const neighbor of neighbors) {
+          if (!reachable.has(neighbor)) {
+            reachable.add(neighbor);
+            changed = true;
+          }
+        }
+      }
+    }
+
+    // Filter nodes to only reachable ones
+    nodes = nodes.filter((n) => reachable.has(n.id));
+
+    // Filter edges to only those between reachable nodes
+    edges = edges.filter((e) => reachable.has(e.source) && reachable.has(e.target));
   }
 
   // Apply Dagre layout to compute optimal positions
