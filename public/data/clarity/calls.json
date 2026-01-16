@@ -1,0 +1,1181 @@
+{
+  "edges": [
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "renderAllResolutions",
+      "to_file": "packages/core/src/excalidraw/render.ts",
+      "to_func": "renderAtResolution"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/elk-render.ts",
+      "from_func": "createNodeElement",
+      "to_file": "packages/core/src/excalidraw/elk-render.ts",
+      "to_func": "generateSeed"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/pathfinding.ts",
+      "from_func": "findPath",
+      "to_file": "packages/core/src/excalidraw/pathfinding.ts",
+      "to_func": "worldToGrid"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/index.ts",
+      "from_func": "runStep",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "generateRunId"
+    },
+    {
+      "from_file": "packages/core/src/output/png.ts",
+      "from_func": "renderExcalidrawToPng",
+      "to_file": "packages/core/src/output/png.ts",
+      "to_func": "createExcalidrawExportHtml"
+    },
+    {
+      "from_file": "packages/core/src/elk/convert.ts",
+      "from_func": "convertNode",
+      "to_file": "packages/core/src/elk/convert.ts",
+      "to_func": "getNodeSize"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/storage.ts",
+      "from_func": "ensureProjectDirs",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "getRunsDir"
+    },
+    {
+      "from_file": "packages/core/src/config/index.ts",
+      "from_func": "loadConfig",
+      "to_file": "packages/core/src/config/index.ts",
+      "to_func": "getConfigPath"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/storage.ts",
+      "from_func": "loadPngFile",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "getPngPath"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/elk-render.ts",
+      "from_func": "createArrowElement",
+      "to_file": "packages/core/src/excalidraw/elk-render.ts",
+      "to_func": "calculateFixedPoint"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "renderAtResolution",
+      "to_file": "packages/core/src/excalidraw/render.ts",
+      "to_func": "createExecutiveGraph"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "renderGroupedToExcalidraw",
+      "to_file": "packages/core/src/excalidraw/render.ts",
+      "to_func": "renderServiceNodeWithBindings"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/index.ts",
+      "from_func": "runEnhanceStep",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "saveMermaidFile"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/index.ts",
+      "from_func": "runEnhanceStep",
+      "to_file": "packages/core/src/llm/client.ts",
+      "to_func": "parseJsonResponse"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/elk-render.ts",
+      "from_func": "createNodeElement",
+      "to_file": "packages/core/src/excalidraw/elk-render.ts",
+      "to_func": "getShapeType"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/elk-render.ts",
+      "from_func": "addNodes",
+      "to_file": "packages/core/src/excalidraw/elk-render.ts",
+      "to_func": "addNodes"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/pathfinding.ts",
+      "from_func": "findPath",
+      "to_file": "packages/core/src/excalidraw/pathfinding.ts",
+      "to_func": "heuristic"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/pathfinding.ts",
+      "from_func": "markPathAsUsed",
+      "to_file": "packages/core/src/excalidraw/pathfinding.ts",
+      "to_func": "worldToGrid"
+    },
+    {
+      "from_file": "packages/core/src/graph/grouping.ts",
+      "from_func": "groupByDependencyPath",
+      "to_file": "packages/core/src/graph/grouping.ts",
+      "to_func": "inferEdgeDirection"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/index.ts",
+      "from_func": "runEnhanceStep",
+      "to_file": "packages/core/src/llm/prompts.ts",
+      "to_func": "buildEnhancePrompt"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/pathfinding.ts",
+      "from_func": "simplifyPath",
+      "to_file": "packages/core/src/excalidraw/pathfinding.ts",
+      "to_func": "isCollinear"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/storage.ts",
+      "from_func": "loadParsedGraph",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "getRunDir"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "renderServiceNodeWithBindings",
+      "to_file": "packages/core/src/excalidraw/render.ts",
+      "to_func": "createTextElement"
+    },
+    {
+      "from_file": "test-pipeline.ts",
+      "from_func": "main",
+      "to_file": "packages/core/src/parsers/docker-compose.ts",
+      "to_func": "parseDockerCompose"
+    },
+    {
+      "from_file": "packages/core/src/graph/grouping.ts",
+      "from_func": "groupByDependencyPath",
+      "to_file": "packages/core/src/graph/grouping.ts",
+      "to_func": "inferGroupEdgeDirection"
+    },
+    {
+      "from_file": "packages/core/src/llm/prompts.ts",
+      "from_func": "buildEnhancePrompt",
+      "to_file": "packages/core/src/llm/prompts.ts",
+      "to_func": "formatServiceInfo"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/storage.ts",
+      "from_func": "ensureRunDir",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "getRunDir"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/pathfinding.ts",
+      "from_func": "findOrthogonalPath",
+      "to_file": "packages/core/src/excalidraw/pathfinding.ts",
+      "to_func": "markPathAsUsed"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/index.ts",
+      "from_func": "runEnhanceStep",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "saveEnhancedGraph"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "renderGroupedToExcalidraw",
+      "to_file": "packages/core/src/graph/grouping.ts",
+      "to_func": "getEdgeDirectionColor"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "createArrowElement",
+      "to_file": "packages/core/src/excalidraw/layout.ts",
+      "to_func": "getNodeCenter"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/index.ts",
+      "from_func": "runParseStep",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "readSourceFile"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/storage.ts",
+      "from_func": "readSourceFile",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "getSourceDir"
+    },
+    {
+      "from_file": "packages/core/src/output/mermaid.ts",
+      "from_func": "graphToMermaid",
+      "to_file": "packages/core/src/output/mermaid.ts",
+      "to_func": "getNodeShape"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/index.ts",
+      "from_func": "runParseStep",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "listSourceFiles"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/storage.ts",
+      "from_func": "ensureProjectDirs",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "getSourceDir"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "renderServiceNodeWithBindings",
+      "to_file": "packages/core/src/excalidraw/render.ts",
+      "to_func": "getServiceShape"
+    },
+    {
+      "from_file": "packages/core/src/output/mermaid.ts",
+      "from_func": "graphToMermaid",
+      "to_file": "packages/core/src/output/mermaid.ts",
+      "to_func": "formatCategoryName"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/storage.ts",
+      "from_func": "getProjectDir",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "getTestDataDir"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/semantic-layout.ts",
+      "from_func": "calculateSemanticLayout",
+      "to_file": "packages/core/src/excalidraw/semantic-layout.ts",
+      "to_func": "calculateNodeSize"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/index.ts",
+      "from_func": "runStep",
+      "to_file": "packages/core/src/pipeline/index.ts",
+      "to_func": "runGenerateStep"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "renderServiceNodeWithBindings",
+      "to_file": "packages/core/src/excalidraw/render.ts",
+      "to_func": "createShapeElement"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/elk-render.ts",
+      "from_func": "renderWithElkLayout",
+      "to_file": "packages/core/src/excalidraw/elk-render.ts",
+      "to_func": "createNodeText"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/index.ts",
+      "from_func": "runStep",
+      "to_file": "packages/core/src/pipeline/index.ts",
+      "to_func": "runLayoutStep"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/elk-render.ts",
+      "from_func": "createArrowElement",
+      "to_file": "packages/core/src/excalidraw/elk-render.ts",
+      "to_func": "extractNodeId"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "calculateOrthogonalPath",
+      "to_file": "packages/core/src/excalidraw/layout.ts",
+      "to_func": "getNodeCenter"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "renderGroupedToExcalidraw",
+      "to_file": "packages/core/src/excalidraw/semantic-layout.ts",
+      "to_func": "calculateSemanticLayout"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/index.ts",
+      "from_func": "runStep",
+      "to_file": "packages/core/src/pipeline/index.ts",
+      "to_func": "runEnhanceStep"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/storage.ts",
+      "from_func": "loadRunMeta",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "getRunDir"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "renderGroupedToExcalidraw",
+      "to_file": "packages/core/src/excalidraw/pathfinding.ts",
+      "to_func": "createConnectionTracker"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/index.ts",
+      "from_func": "runParseStep",
+      "to_file": "packages/core/src/parsers/docker-compose.ts",
+      "to_func": "parseDockerCompose"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/index.ts",
+      "from_func": "runPipeline",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "generateRunId"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/storage.ts",
+      "from_func": "listSourceFiles",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "getSourceDir"
+    },
+    {
+      "from_file": "packages/core/src/elk/convert.ts",
+      "from_func": "convertNode",
+      "to_file": "packages/core/src/elk/convert.ts",
+      "to_func": "getLabelDimensions"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/storage.ts",
+      "from_func": "getPngPath",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "getRunDir"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/storage.ts",
+      "from_func": "getSourceDir",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "getProjectDir"
+    },
+    {
+      "from_file": "packages/cli/src/utils/output.ts",
+      "from_func": "formatStepResult",
+      "to_file": "packages/cli/src/utils/output.ts",
+      "to_func": "formatDuration"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/index.ts",
+      "from_func": "runStep",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "ensureRunDir"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/index.ts",
+      "from_func": "runPipeline",
+      "to_file": "packages/core/src/pipeline/index.ts",
+      "to_func": "runParseStep"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/elk-render.ts",
+      "from_func": "renderWithElkLayout",
+      "to_file": "packages/core/src/excalidraw/elk-render.ts",
+      "to_func": "extractNodeId"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/storage.ts",
+      "from_func": "saveEnhancedGraph",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "ensureRunDir"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "renderServiceNode",
+      "to_file": "packages/core/src/excalidraw/render.ts",
+      "to_func": "createShapeElement"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/index.ts",
+      "from_func": "runParseStep",
+      "to_file": "packages/core/src/output/mermaid.ts",
+      "to_func": "graphToMermaid"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/layout.ts",
+      "from_func": "calculateLayout",
+      "to_file": "packages/core/src/excalidraw/layout.ts",
+      "to_func": "groupByLayer"
+    },
+    {
+      "from_file": "packages/core/src/graph/grouping.ts",
+      "from_func": "findCommonPattern",
+      "to_file": "packages/core/src/graph/grouping.ts",
+      "to_func": "findLongestCommonPrefix"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "renderGroupedToExcalidraw",
+      "to_file": "packages/core/src/excalidraw/render.ts",
+      "to_func": "renderServiceGroupWithBindings"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/validate.ts",
+      "from_func": "isValidExcalidraw",
+      "to_file": "packages/core/src/excalidraw/validate.ts",
+      "to_func": "validateExcalidraw"
+    },
+    {
+      "from_file": "packages/core/src/config/index.ts",
+      "from_func": "hasApiKey",
+      "to_file": "packages/core/src/config/index.ts",
+      "to_func": "getApiKey"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "renderGroupedToExcalidraw",
+      "to_file": "packages/core/src/graph/grouping.ts",
+      "to_func": "groupByDependencyPath"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/storage.ts",
+      "from_func": "getLatestRun",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "listRuns"
+    },
+    {
+      "from_file": "packages/core/src/elk/convert.ts",
+      "from_func": "infraGraphToElk",
+      "to_file": "packages/core/src/elk/convert.ts",
+      "to_func": "getSemanticLayer"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/index.ts",
+      "from_func": "runPipeline",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "saveRunMeta"
+    },
+    {
+      "from_file": "packages/core/src/output/mermaid.ts",
+      "from_func": "graphToMermaid",
+      "to_file": "packages/core/src/output/mermaid.ts",
+      "to_func": "escapeLabel"
+    },
+    {
+      "from_file": "packages/core/src/graph/grouping.ts",
+      "from_func": "findCommonSuffix",
+      "to_file": "packages/core/src/graph/grouping.ts",
+      "to_func": "findLongestCommonPrefix"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "createArrowElement",
+      "to_file": "packages/core/src/excalidraw/render.ts",
+      "to_func": "getConnectionFocus"
+    },
+    {
+      "from_file": "packages/core/src/llm/client.ts",
+      "from_func": "parseJsonResponse",
+      "to_file": "packages/core/src/llm/client.ts",
+      "to_func": "findBalancedJson"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/index.ts",
+      "from_func": "runEnhanceStep",
+      "to_file": "packages/core/src/output/mermaid.ts",
+      "to_func": "graphToMermaidStyled"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "renderGroupedToExcalidraw",
+      "to_file": "packages/core/src/excalidraw/render.ts",
+      "to_func": "createArrowElement"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/storage.ts",
+      "from_func": "loadMermaidFile",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "getRunDir"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "calculateArrowPath",
+      "to_file": "packages/core/src/excalidraw/render.ts",
+      "to_func": "calculateOrthogonalPath"
+    },
+    {
+      "from_file": "packages/core/src/parsers/docker-compose.ts",
+      "from_func": "parseDockerCompose",
+      "to_file": "packages/core/src/parsers/docker-compose.ts",
+      "to_func": "inferServiceType"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "renderToExcalidraw",
+      "to_file": "packages/core/src/excalidraw/layout.ts",
+      "to_func": "calculateLayout"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "renderServiceNode",
+      "to_file": "packages/core/src/excalidraw/render.ts",
+      "to_func": "getServiceColors"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "createArrowElement",
+      "to_file": "packages/core/src/excalidraw/layout.ts",
+      "to_func": "getConnectionPoint"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/storage.ts",
+      "from_func": "loadElkInput",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "getRunDir"
+    },
+    {
+      "from_file": "test-pipeline.ts",
+      "from_func": "main",
+      "to_file": "packages/core/src/output/png.ts",
+      "to_func": "renderExcalidrawToPng"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/storage.ts",
+      "from_func": "listRuns",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "loadRunMeta"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/index.ts",
+      "from_func": "runGenerateStep",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "saveExcalidrawFile"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/elk-render.ts",
+      "from_func": "createArrowElement",
+      "to_file": "packages/core/src/excalidraw/elk-render.ts",
+      "to_func": "generateSeed"
+    },
+    {
+      "from_file": "packages/core/src/graph/grouping.ts",
+      "from_func": "inferGroupEdgeDirection",
+      "to_file": "packages/core/src/graph/grouping.ts",
+      "to_func": "isProducerService"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/pathfinding.ts",
+      "from_func": "findOrthogonalPath",
+      "to_file": "packages/core/src/excalidraw/pathfinding.ts",
+      "to_func": "getConnectionOffset"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/storage.ts",
+      "from_func": "saveElkInput",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "ensureRunDir"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/storage.ts",
+      "from_func": "saveExcalidrawFile",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "ensureRunDir"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/storage.ts",
+      "from_func": "writeSourceFile",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "ensureProjectDirs"
+    },
+    {
+      "from_file": "packages/core/src/graph/grouping.ts",
+      "from_func": "inferGroupEdgeDirection",
+      "to_file": "packages/core/src/graph/grouping.ts",
+      "to_func": "isWorkerService"
+    },
+    {
+      "from_file": "packages/core/src/output/png.ts",
+      "from_func": "renderExcalidrawToFile",
+      "to_file": "packages/core/src/output/png.ts",
+      "to_func": "renderExcalidrawToPng"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/index.ts",
+      "from_func": "runLayoutStep",
+      "to_file": "packages/core/src/elk/layout.ts",
+      "to_func": "runLayout"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "createArrowElement",
+      "to_file": "packages/core/src/excalidraw/render.ts",
+      "to_func": "calculatePathBounds"
+    },
+    {
+      "from_file": "test-pipeline.ts",
+      "from_func": "main",
+      "to_file": "test-pipeline.ts",
+      "to_func": "getDateTimeString"
+    },
+    {
+      "from_file": "packages/core/src/graph/grouping.ts",
+      "from_func": "inferEdgeDirection",
+      "to_file": "packages/core/src/graph/grouping.ts",
+      "to_func": "isProducerService"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/elk-render.ts",
+      "from_func": "createNodeElement",
+      "to_file": "packages/core/src/excalidraw/elk-render.ts",
+      "to_func": "getServiceColors"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/storage.ts",
+      "from_func": "loadElkOutput",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "getRunDir"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/storage.ts",
+      "from_func": "getRunsDir",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "getProjectDir"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/index.ts",
+      "from_func": "runLayoutStep",
+      "to_file": "packages/core/src/elk/convert.ts",
+      "to_func": "infraGraphToElk"
+    },
+    {
+      "from_file": "test-pipeline.ts",
+      "from_func": "main",
+      "to_file": "packages/core/src/excalidraw/render.ts",
+      "to_func": "renderGroupedToExcalidraw"
+    },
+    {
+      "from_file": "packages/core/src/graph/grouping.ts",
+      "from_func": "inferEdgeDirection",
+      "to_file": "packages/core/src/graph/grouping.ts",
+      "to_func": "isWorkerService"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "createShapeElement",
+      "to_file": "packages/core/src/excalidraw/render.ts",
+      "to_func": "createBaseElement"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "createExecutiveGraph",
+      "to_file": "packages/core/src/excalidraw/render.ts",
+      "to_func": "groupNodesByCategory"
+    },
+    {
+      "from_file": "packages/core/src/graph/grouping.ts",
+      "from_func": "groupByDependencyPath",
+      "to_file": "packages/core/src/graph/grouping.ts",
+      "to_func": "calculateDependencySignature"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/validate.ts",
+      "from_func": "validateDiagram",
+      "to_file": "packages/core/src/pipeline/validate.ts",
+      "to_func": "parseValidationResponse"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/elk-render.ts",
+      "from_func": "renderWithElkLayout",
+      "to_file": "packages/core/src/excalidraw/elk-render.ts",
+      "to_func": "buildElkNodeMap"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "createExecutiveGraph",
+      "to_file": "packages/core/src/excalidraw/render.ts",
+      "to_func": "getCategoryFromType"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "calculateArrowPath",
+      "to_file": "packages/core/src/excalidraw/layout.ts",
+      "to_func": "getNodeCenter"
+    },
+    {
+      "from_file": "packages/core/src/output/mermaid.ts",
+      "from_func": "graphToMermaidStyled",
+      "to_file": "packages/core/src/output/mermaid.ts",
+      "to_func": "getStyleClass"
+    },
+    {
+      "from_file": "packages/core/src/output/mermaid.ts",
+      "from_func": "groupByCategory",
+      "to_file": "packages/core/src/output/mermaid.ts",
+      "to_func": "getCategoryFromType"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/index.ts",
+      "from_func": "runPipeline",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "ensureRunDir"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/storage.ts",
+      "from_func": "generateRunId",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "pad"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/index.ts",
+      "from_func": "runLayoutStep",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "saveElkInput"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "renderServiceGroup",
+      "to_file": "packages/core/src/excalidraw/render.ts",
+      "to_func": "createTextElement"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/elk-render.ts",
+      "from_func": "buildElkNodeMap",
+      "to_file": "packages/core/src/excalidraw/elk-render.ts",
+      "to_func": "addNodes"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "createTextElement",
+      "to_file": "packages/core/src/excalidraw/render.ts",
+      "to_func": "generateSeed"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "renderAtResolution",
+      "to_file": "packages/core/src/excalidraw/render.ts",
+      "to_func": "renderToExcalidraw"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/storage.ts",
+      "from_func": "getRunDir",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "getRunsDir"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/elk-render.ts",
+      "from_func": "renderWithElkLayout",
+      "to_file": "packages/core/src/excalidraw/elk-render.ts",
+      "to_func": "createArrowElement"
+    },
+    {
+      "from_file": "packages/cli/src/utils/output.ts",
+      "from_func": "formatRunSummary",
+      "to_file": "packages/cli/src/utils/output.ts",
+      "to_func": "formatStepResult"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "renderToExcalidraw",
+      "to_file": "packages/core/src/excalidraw/render.ts",
+      "to_func": "renderServiceNode"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/semantic-layout.ts",
+      "from_func": "calculateSemanticLayout",
+      "to_file": "packages/core/src/excalidraw/semantic-layout.ts",
+      "to_func": "countConnections"
+    },
+    {
+      "from_file": "packages/core/src/output/png.ts",
+      "from_func": "renderExcalidrawAutoFit",
+      "to_file": "packages/core/src/output/png.ts",
+      "to_func": "renderExcalidrawToFile"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/index.ts",
+      "from_func": "runGenerateStep",
+      "to_file": "packages/core/src/excalidraw/elk-render.ts",
+      "to_func": "renderWithElkLayout"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/layout.ts",
+      "from_func": "calculateLayout",
+      "to_file": "packages/core/src/excalidraw/layout.ts",
+      "to_func": "sortNodesInLayer"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "createArrowElement",
+      "to_file": "packages/core/src/excalidraw/render.ts",
+      "to_func": "generateSeed"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/index.ts",
+      "from_func": "runLayoutStep",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "saveElkOutput"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "renderServiceGroupWithBindings",
+      "to_file": "packages/core/src/excalidraw/render.ts",
+      "to_func": "createShapeElement"
+    },
+    {
+      "from_file": "packages/core/src/graph/grouping.ts",
+      "from_func": "generateGroupName",
+      "to_file": "packages/core/src/graph/grouping.ts",
+      "to_func": "findCommonPattern"
+    },
+    {
+      "from_file": "packages/core/src/graph/grouping.ts",
+      "from_func": "inferEdgeDirection",
+      "to_file": "packages/core/src/graph/grouping.ts",
+      "to_func": "isConsumerService"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/storage.ts",
+      "from_func": "saveElkOutput",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "ensureRunDir"
+    },
+    {
+      "from_file": "packages/core/src/elk/convert.ts",
+      "from_func": "infraGraphToElk",
+      "to_file": "packages/core/src/elk/convert.ts",
+      "to_func": "convertNode"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/semantic-layout.ts",
+      "from_func": "calculateSemanticLayout",
+      "to_file": "packages/core/src/excalidraw/semantic-layout.ts",
+      "to_func": "findHelperParent"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/index.ts",
+      "from_func": "runParseStep",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "saveMermaidFile"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/storage.ts",
+      "from_func": "saveRunMeta",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "ensureRunDir"
+    },
+    {
+      "from_file": "packages/core/src/config/index.ts",
+      "from_func": "saveConfig",
+      "to_file": "packages/core/src/config/index.ts",
+      "to_func": "getConfigPath"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "renderServiceNodeWithBindings",
+      "to_file": "packages/core/src/excalidraw/render.ts",
+      "to_func": "getServiceColors"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/index.ts",
+      "from_func": "runGenerateStep",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "savePngFile"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "renderServiceGroup",
+      "to_file": "packages/core/src/excalidraw/render.ts",
+      "to_func": "createShapeElement"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/storage.ts",
+      "from_func": "listRuns",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "getRunsDir"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "renderGroupedToExcalidraw",
+      "to_file": "packages/core/src/excalidraw/pathfinding.ts",
+      "to_func": "createGrid"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/storage.ts",
+      "from_func": "saveMermaidFile",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "ensureRunDir"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/index.ts",
+      "from_func": "runPipeline",
+      "to_file": "packages/core/src/pipeline/index.ts",
+      "to_func": "runGenerateStep"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/pathfinding.ts",
+      "from_func": "findOrthogonalPath",
+      "to_file": "packages/core/src/excalidraw/pathfinding.ts",
+      "to_func": "findPath"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/index.ts",
+      "from_func": "runGenerateStep",
+      "to_file": "packages/core/src/output/png.ts",
+      "to_func": "renderExcalidrawToPng"
+    },
+    {
+      "from_file": "packages/core/src/output/png.ts",
+      "from_func": "renderExcalidrawAutoFit",
+      "to_file": "packages/core/src/output/png.ts",
+      "to_func": "calculateBoundingBox"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/index.ts",
+      "from_func": "runPipeline",
+      "to_file": "packages/core/src/pipeline/index.ts",
+      "to_func": "runLayoutStep"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/pathfinding.ts",
+      "from_func": "findPath",
+      "to_file": "packages/core/src/excalidraw/pathfinding.ts",
+      "to_func": "gridToWorld"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/semantic-layout.ts",
+      "from_func": "calculateSemanticLayout",
+      "to_file": "packages/core/src/excalidraw/semantic-layout.ts",
+      "to_func": "detectServiceRole"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/pathfinding.ts",
+      "from_func": "findOrthogonalPath",
+      "to_file": "packages/core/src/excalidraw/pathfinding.ts",
+      "to_func": "getBestEdge"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/index.ts",
+      "from_func": "runPipeline",
+      "to_file": "packages/core/src/pipeline/index.ts",
+      "to_func": "runEnhanceStep"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "calculateArrowPath",
+      "to_file": "packages/core/src/excalidraw/pathfinding.ts",
+      "to_func": "findOrthogonalPath"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/pathfinding.ts",
+      "from_func": "findPath",
+      "to_file": "packages/core/src/excalidraw/pathfinding.ts",
+      "to_func": "getNeighbors"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/pathfinding.ts",
+      "from_func": "findPath",
+      "to_file": "packages/core/src/excalidraw/pathfinding.ts",
+      "to_func": "findNearestEmpty"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/index.ts",
+      "from_func": "runParseStep",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "saveParsedGraph"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/index.ts",
+      "from_func": "runEnhanceStep",
+      "to_file": "packages/core/src/llm/prompts.ts",
+      "to_func": "applyEnhancements"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "renderServiceGroupWithBindings",
+      "to_file": "packages/core/src/excalidraw/render.ts",
+      "to_func": "createTextElement"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "createBaseElement",
+      "to_file": "packages/core/src/excalidraw/render.ts",
+      "to_func": "generateSeed"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "groupNodesByCategory",
+      "to_file": "packages/core/src/excalidraw/render.ts",
+      "to_func": "getCategoryFromType"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/index.ts",
+      "from_func": "runStep",
+      "to_file": "packages/core/src/pipeline/index.ts",
+      "to_func": "runParseStep"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "calculateArrowPath",
+      "to_file": "packages/core/src/excalidraw/layout.ts",
+      "to_func": "getConnectionPoint"
+    },
+    {
+      "from_file": "packages/core/src/config/index.ts",
+      "from_func": "getApiKey",
+      "to_file": "packages/core/src/config/index.ts",
+      "to_func": "loadConfig"
+    },
+    {
+      "from_file": "packages/core/src/graph/grouping.ts",
+      "from_func": "groupByDependencyPath",
+      "to_file": "packages/core/src/graph/grouping.ts",
+      "to_func": "generateGroupName"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/storage.ts",
+      "from_func": "writeSourceFile",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "getSourceDir"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/layout.ts",
+      "from_func": "calculateLayout",
+      "to_file": "packages/core/src/excalidraw/layout.ts",
+      "to_func": "calculateLayers"
+    },
+    {
+      "from_file": "packages/core/src/output/mermaid.ts",
+      "from_func": "graphToMermaidStyled",
+      "to_file": "packages/core/src/output/mermaid.ts",
+      "to_func": "graphToMermaid"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/pathfinding.ts",
+      "from_func": "findPath",
+      "to_file": "packages/core/src/excalidraw/pathfinding.ts",
+      "to_func": "simplifyPath"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "renderServiceNode",
+      "to_file": "packages/core/src/excalidraw/render.ts",
+      "to_func": "createTextElement"
+    },
+    {
+      "from_file": "scripts/validate-output.ts",
+      "from_func": "main",
+      "to_file": "packages/core/src/excalidraw/validate.ts",
+      "to_func": "validateExcalidraw"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/elk-render.ts",
+      "from_func": "createArrowElement",
+      "to_file": "packages/core/src/excalidraw/elk-render.ts",
+      "to_func": "elkSectionToArrowPoints"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/pathfinding.ts",
+      "from_func": "findOrthogonalPath",
+      "to_file": "packages/core/src/excalidraw/pathfinding.ts",
+      "to_func": "getEdgePoint"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/elk-render.ts",
+      "from_func": "createNodeText",
+      "to_file": "packages/core/src/excalidraw/elk-render.ts",
+      "to_func": "generateSeed"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "renderToExcalidraw",
+      "to_file": "packages/core/src/excalidraw/render.ts",
+      "to_func": "createArrowElement"
+    },
+    {
+      "from_file": "packages/core/src/graph/grouping.ts",
+      "from_func": "inferGroupEdgeDirection",
+      "to_file": "packages/core/src/graph/grouping.ts",
+      "to_func": "isConsumerService"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/index.ts",
+      "from_func": "runEnhanceStep",
+      "to_file": "packages/core/src/llm/client.ts",
+      "to_func": "sendMessage"
+    },
+    {
+      "from_file": "packages/core/src/graph/grouping.ts",
+      "from_func": "findCommonPattern",
+      "to_file": "packages/core/src/graph/grouping.ts",
+      "to_func": "findCommonSuffix"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/index.ts",
+      "from_func": "runLayoutStep",
+      "to_file": "packages/core/src/elk/convert.ts",
+      "to_func": "summarizeLayers"
+    },
+    {
+      "from_file": "packages/core/src/parsers/docker-compose.ts",
+      "from_func": "parseDockerCompose",
+      "to_file": "packages/core/src/parsers/docker-compose.ts",
+      "to_func": "parseEnvironment"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/storage.ts",
+      "from_func": "savePngFile",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "ensureRunDir"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/layout.ts",
+      "from_func": "getConnectionPoint",
+      "to_file": "packages/core/src/excalidraw/layout.ts",
+      "to_func": "getNodeCenter"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "createGroupsGraph",
+      "to_file": "packages/core/src/excalidraw/render.ts",
+      "to_func": "groupNodesByGroupName"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/validate.ts",
+      "from_func": "validateDiagram",
+      "to_file": "packages/core/src/pipeline/validate.ts",
+      "to_func": "buildValidationPrompt"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "renderGroupedToExcalidraw",
+      "to_file": "packages/core/src/excalidraw/layout.ts",
+      "to_func": "calculateLayout"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "renderServiceNode",
+      "to_file": "packages/core/src/excalidraw/render.ts",
+      "to_func": "getServiceShape"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/storage.ts",
+      "from_func": "loadEnhancedGraph",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "getRunDir"
+    },
+    {
+      "from_file": "packages/core/src/output/mermaid.ts",
+      "from_func": "graphToMermaid",
+      "to_file": "packages/core/src/output/mermaid.ts",
+      "to_func": "groupByCategory"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/storage.ts",
+      "from_func": "saveParsedGraph",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "ensureRunDir"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/storage.ts",
+      "from_func": "loadExcalidrawFile",
+      "to_file": "packages/core/src/pipeline/storage.ts",
+      "to_func": "getRunDir"
+    },
+    {
+      "from_file": "packages/core/src/pipeline/validate.ts",
+      "from_func": "validateDiagramFromFile",
+      "to_file": "packages/core/src/pipeline/validate.ts",
+      "to_func": "validateDiagram"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/elk-render.ts",
+      "from_func": "renderWithElkLayout",
+      "to_file": "packages/core/src/excalidraw/elk-render.ts",
+      "to_func": "createNodeElement"
+    },
+    {
+      "from_file": "packages/core/src/excalidraw/render.ts",
+      "from_func": "renderAtResolution",
+      "to_file": "packages/core/src/excalidraw/render.ts",
+      "to_func": "createGroupsGraph"
+    }
+  ],
+  "count": 196
+}

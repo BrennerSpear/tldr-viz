@@ -1,0 +1,253 @@
+{
+  "entry_layer": [
+    {
+      "file": "test-pipeline.ts",
+      "function": "main"
+    },
+    {
+      "file": "packages/core/src/config/index.ts",
+      "function": "hasApiKey"
+    },
+    {
+      "file": "packages/cli/src/utils/output.ts",
+      "function": "formatRunSummary"
+    },
+    {
+      "file": "packages/core/src/pipeline/storage.ts",
+      "function": "loadParsedGraph"
+    },
+    {
+      "file": "packages/core/src/pipeline/storage.ts",
+      "function": "loadExcalidrawFile"
+    },
+    {
+      "file": "packages/core/src/pipeline/index.ts",
+      "function": "runPipeline"
+    },
+    {
+      "file": "packages/core/src/excalidraw/render.ts",
+      "function": "renderAllResolutions"
+    },
+    {
+      "file": "packages/core/src/pipeline/storage.ts",
+      "function": "loadElkOutput"
+    },
+    {
+      "file": "packages/core/src/pipeline/index.ts",
+      "function": "runStep"
+    },
+    {
+      "file": "packages/core/src/pipeline/storage.ts",
+      "function": "loadMermaidFile"
+    },
+    {
+      "file": "packages/core/src/pipeline/storage.ts",
+      "function": "writeSourceFile"
+    },
+    {
+      "file": "packages/core/src/pipeline/storage.ts",
+      "function": "loadPngFile"
+    },
+    {
+      "file": "packages/core/src/pipeline/storage.ts",
+      "function": "getLatestRun"
+    },
+    {
+      "file": "packages/core/src/pipeline/storage.ts",
+      "function": "loadElkInput"
+    },
+    {
+      "file": "packages/core/src/excalidraw/validate.ts",
+      "function": "isValidExcalidraw"
+    },
+    {
+      "file": "packages/core/src/config/index.ts",
+      "function": "saveConfig"
+    },
+    {
+      "file": "scripts/validate-output.ts",
+      "function": "main"
+    },
+    {
+      "file": "packages/core/src/pipeline/validate.ts",
+      "function": "validateDiagramFromFile"
+    },
+    {
+      "file": "packages/core/src/excalidraw/render.ts",
+      "function": "calculateArrowPath"
+    },
+    {
+      "file": "packages/core/src/output/png.ts",
+      "function": "renderExcalidrawAutoFit"
+    }
+  ],
+  "leaf_layer": [
+    {
+      "file": "packages/core/src/output/mermaid.ts",
+      "function": "getStyleClass"
+    },
+    {
+      "file": "packages/core/src/excalidraw/pathfinding.ts",
+      "function": "worldToGrid"
+    },
+    {
+      "file": "packages/core/src/excalidraw/pathfinding.ts",
+      "function": "getBestEdge"
+    },
+    {
+      "file": "packages/core/src/excalidraw/render.ts",
+      "function": "getConnectionFocus"
+    },
+    {
+      "file": "packages/core/src/graph/grouping.ts",
+      "function": "isWorkerService"
+    },
+    {
+      "file": "packages/core/src/elk/convert.ts",
+      "function": "getSemanticLayer"
+    },
+    {
+      "file": "packages/core/src/output/mermaid.ts",
+      "function": "getCategoryFromType"
+    },
+    {
+      "file": "packages/core/src/elk/layout.ts",
+      "function": "runLayout"
+    },
+    {
+      "file": "packages/core/src/excalidraw/render.ts",
+      "function": "getCategoryFromType"
+    },
+    {
+      "file": "packages/core/src/excalidraw/pathfinding.ts",
+      "function": "getNeighbors"
+    },
+    {
+      "file": "packages/core/src/excalidraw/render.ts",
+      "function": "getServiceColors"
+    },
+    {
+      "file": "packages/core/src/llm/client.ts",
+      "function": "sendMessage"
+    },
+    {
+      "file": "packages/core/src/output/png.ts",
+      "function": "calculateBoundingBox"
+    },
+    {
+      "file": "packages/core/src/excalidraw/layout.ts",
+      "function": "sortNodesInLayer"
+    },
+    {
+      "file": "packages/core/src/elk/convert.ts",
+      "function": "getLabelDimensions"
+    },
+    {
+      "file": "packages/core/src/elk/convert.ts",
+      "function": "summarizeLayers"
+    },
+    {
+      "file": "packages/core/src/output/png.ts",
+      "function": "createExcalidrawExportHtml"
+    },
+    {
+      "file": "packages/core/src/parsers/docker-compose.ts",
+      "function": "inferServiceType"
+    },
+    {
+      "file": "packages/core/src/excalidraw/pathfinding.ts",
+      "function": "gridToWorld"
+    },
+    {
+      "file": "packages/core/src/excalidraw/render.ts",
+      "function": "calculatePathBounds"
+    }
+  ],
+  "middle_layer_count": 71,
+  "directory_layers": [
+    {
+      "directory": ".",
+      "calls_out": 3,
+      "calls_in": 0,
+      "inferred_layer": "HIGH (entry/controller)",
+      "function_count": 2
+    },
+    {
+      "directory": "packages/cli/src/utils",
+      "calls_out": 0,
+      "calls_in": 0,
+      "inferred_layer": "LOW (utility/data)",
+      "function_count": 3
+    },
+    {
+      "directory": "packages/core/src/config",
+      "calls_out": 0,
+      "calls_in": 0,
+      "inferred_layer": "LOW (utility/data)",
+      "function_count": 5
+    },
+    {
+      "directory": "packages/core/src/elk",
+      "calls_out": 0,
+      "calls_in": 3,
+      "inferred_layer": "LOW (utility/data)",
+      "function_count": 7
+    },
+    {
+      "directory": "packages/core/src/excalidraw",
+      "calls_out": 2,
+      "calls_in": 3,
+      "inferred_layer": "MIDDLE (service)",
+      "function_count": 64
+    },
+    {
+      "directory": "packages/core/src/graph",
+      "calls_out": 0,
+      "calls_in": 2,
+      "inferred_layer": "LOW (utility/data)",
+      "function_count": 12
+    },
+    {
+      "directory": "packages/core/src/llm",
+      "calls_out": 0,
+      "calls_in": 4,
+      "inferred_layer": "LOW (utility/data)",
+      "function_count": 6
+    },
+    {
+      "directory": "packages/core/src/output",
+      "calls_out": 0,
+      "calls_in": 4,
+      "inferred_layer": "LOW (utility/data)",
+      "function_count": 13
+    },
+    {
+      "directory": "packages/core/src/parsers",
+      "calls_out": 0,
+      "calls_in": 2,
+      "inferred_layer": "LOW (utility/data)",
+      "function_count": 3
+    },
+    {
+      "directory": "packages/core/src/pipeline",
+      "calls_out": 12,
+      "calls_in": 0,
+      "inferred_layer": "HIGH (entry/controller)",
+      "function_count": 41
+    },
+    {
+      "directory": "scripts",
+      "calls_out": 1,
+      "calls_in": 0,
+      "inferred_layer": "MIDDLE (service)",
+      "function_count": 1
+    }
+  ],
+  "circular_dependencies": [],
+  "summary": {
+    "entry_count": 22,
+    "leaf_count": 64,
+    "middle_count": 71,
+    "circular_count": 0
+  }
+}

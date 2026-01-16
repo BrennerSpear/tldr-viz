@@ -1,0 +1,1212 @@
+{
+  "root": "/Users/brenner/repos/clarity",
+  "languages": [
+    "typescript"
+  ],
+  "files": [
+    {
+      "path": "test-pipeline.ts",
+      "functions": [
+        "getDateTimeString",
+        "main"
+      ],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "{ parseDockerCompose } from \"./packages/core/src/parsers/docker-compose\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ renderGroupedToExcalidraw } from \"./packages/core/src/excalidraw/render\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ renderExcalidrawToPng } from \"./packages/core/src/output/png\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ readFile, writeFile, mkdir } from \"node:fs/promises\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "scripts/test-helm-parser.ts",
+      "functions": [],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "{ parseHelmChart } from \"../packages/core/src/parsers/helm\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "scripts/validate-output.ts",
+      "functions": [
+        "main"
+      ],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "{ readFile, readdir } from \"node:fs/promises\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ join } from \"node:path\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ validateExcalidraw } from \"../packages/core/src/excalidraw/validate\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "packages/core/src/index.ts",
+      "functions": [],
+      "classes": [],
+      "methods": [],
+      "imports": []
+    },
+    {
+      "path": "packages/core/src/pipeline/index.test.ts",
+      "functions": [],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "{ beforeAll, describe, expect, test } from \"bun:test\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ InfraGraphSchema } from \"../graph/schema\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ parseDockerCompose } from \"../parsers/docker-compose\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "packages/core/src/pipeline/storage.ts",
+      "functions": [
+        "generateRunId",
+        "getTestDataDir",
+        "getProjectDir",
+        "getSourceDir",
+        "getRunsDir",
+        "getRunDir",
+        "ensureProjectDirs",
+        "ensureRunDir",
+        "saveRunMeta",
+        "loadRunMeta",
+        "saveParsedGraph",
+        "loadParsedGraph",
+        "saveEnhancedGraph",
+        "loadEnhancedGraph",
+        "saveElkInput",
+        "loadElkInput",
+        "saveElkOutput",
+        "loadElkOutput",
+        "saveExcalidrawFile",
+        "loadExcalidrawFile",
+        "listRuns",
+        "getLatestRun",
+        "readSourceFile",
+        "writeSourceFile",
+        "listSourceFiles",
+        "savePngFile",
+        "getPngPath",
+        "loadPngFile",
+        "saveMermaidFile",
+        "loadMermaidFile"
+      ],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "{ mkdir, readFile, readdir, writeFile } from \"node:fs/promises\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ join } from \"node:path\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "type { ElkGraph } from \"../elk/types\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "type { ExcalidrawFile } from \"../excalidraw/types\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "type { InfraGraph } from \"../graph/types\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "type { PipelineRun } from \"./types\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "packages/core/src/pipeline/validate.ts",
+      "functions": [
+        "isValidationPassing",
+        "calculateAverageScore",
+        "buildValidationPrompt",
+        "parseValidationResponse",
+        "validateDiagram",
+        "validateDiagramFromFile",
+        "createValidationSummary"
+      ],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "type Anthropic from \"@anthropic-ai/sdk\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "type { InfraGraph } from \"../graph/types\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ createClient, sendMessage } from \"../llm/client\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "packages/core/src/pipeline/types.ts",
+      "functions": [],
+      "classes": [],
+      "methods": [],
+      "imports": []
+    },
+    {
+      "path": "packages/core/src/pipeline/index.ts",
+      "functions": [
+        "runParseStep",
+        "runEnhanceStep",
+        "runLayoutStep",
+        "runGenerateStep",
+        "runPipeline",
+        "runStep"
+      ],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "{ infraGraphToElk, summarizeLayers } from \"../elk/convert\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ runLayout } from \"../elk/layout\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "type { ElkGraph } from \"../elk/types\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ renderWithElkLayout } from \"../excalidraw/elk-render\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "type { ExcalidrawFile } from \"../excalidraw/types\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "type { InfraGraph } from \"../graph/types\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ DEFAULT_MODEL, parseJsonResponse, sendMessage } from \"../llm/client\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{\n\ttype EnhancementResponse,\n\tapplyEnhancements,\n\tbuildEnhancePrompt,\n} from \"../llm/prompts\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ graphToMermaid, graphToMermaidStyled } from \"../output/mermaid\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ renderExcalidrawToPng } from \"../output/png\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ parseDockerCompose } from \"../parsers/docker-compose\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{\n\tensureRunDir,\n\tgenerateRunId,\n\tlistSourceFiles,\n\treadSourceFile,\n\tsaveElkInput,\n\tsaveElkOutput,\n\tsaveEnhancedGraph,\n\tsaveExcalidrawFile,\n\tsaveMermaidFile,\n\tsaveParsedGraph,\n\tsavePngFile,\n\tsaveRunMeta,\n} from \"./storage\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "type { PipelineConfig, PipelineRun, StepResult } from \"./types\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "packages/core/src/parsers/index.ts",
+      "functions": [],
+      "classes": [],
+      "methods": [],
+      "imports": []
+    },
+    {
+      "path": "packages/core/src/parsers/docker-compose.ts",
+      "functions": [
+        "inferServiceType",
+        "parsePort",
+        "parseVolume",
+        "parseEnvironment",
+        "parseDockerCompose"
+      ],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "{ parse as parseYaml } from \"yaml\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ GraphBuilder } from \"../graph/builder\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "type {\n\tInfraGraph,\n\tPortMapping,\n\tServiceType,\n\tVolumeMount,\n} from \"../graph/types\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "packages/core/src/llm/prompts.ts",
+      "functions": [
+        "buildEnhancePrompt",
+        "formatServiceInfo",
+        "applyEnhancements"
+      ],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "type { InfraGraph, QueueRole, ServiceNode } from \"../graph/types\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "packages/core/src/llm/prompts.test.ts",
+      "functions": [],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "{ describe, expect, test } from \"bun:test\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "type { InfraGraph } from \"../graph/types\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{\n\ttype EnhancementResponse,\n\tapplyEnhancements,\n\tbuildEnhancePrompt,\n} from \"./prompts\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "packages/core/src/llm/client.ts",
+      "functions": [
+        "sendMessage",
+        "findBalancedJson",
+        "parseJsonResponse"
+      ],
+      "classes": [],
+      "methods": [],
+      "imports": []
+    },
+    {
+      "path": "packages/core/src/llm/index.ts",
+      "functions": [],
+      "classes": [],
+      "methods": [],
+      "imports": []
+    },
+    {
+      "path": "packages/core/src/llm/client.test.ts",
+      "functions": [],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "{ describe, expect, test } from \"bun:test\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ parseJsonResponse } from \"./client\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "packages/core/src/llm/enhance.integration.test.ts",
+      "functions": [],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "{ describe, expect, test } from \"bun:test\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ getApiKey } from \"../config\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "type { InfraGraph } from \"../graph/types\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ DEFAULT_MODEL, parseJsonResponse, sendMessage } from \"./client\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{\n\ttype EnhancementResponse,\n\tapplyEnhancements,\n\tbuildEnhancePrompt,\n} from \"./prompts\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "packages/core/src/config/index.ts",
+      "functions": [
+        "getConfigPath",
+        "loadConfig",
+        "saveConfig",
+        "getApiKey",
+        "hasApiKey",
+        "maskApiKey"
+      ],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "{ existsSync, mkdirSync, readFileSync, writeFileSync } from \"node:fs\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ homedir } from \"node:os\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ dirname, join } from \"node:path\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "packages/core/src/graph/schema.ts",
+      "functions": [],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "{ z } from \"zod\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "packages/core/src/graph/builder.ts",
+      "functions": [
+        "nodes",
+        "edges",
+        "sourceFiles",
+        "project",
+        "constructor",
+        "addSourceFile",
+        "addNode",
+        "addEdge",
+        "hasNode",
+        "getNode",
+        "build"
+      ],
+      "classes": [
+        "GraphBuilder"
+      ],
+      "methods": [
+        "nodes",
+        "edges",
+        "sourceFiles",
+        "project",
+        "constructor",
+        "addSourceFile",
+        "addNode",
+        "addEdge",
+        "hasNode",
+        "getNode",
+        "build"
+      ],
+      "imports": [
+        {
+          "module": "type {\n\tDependencyEdge,\n\tDependencyType,\n\tInfraGraph,\n\tServiceNode,\n\tServiceType,\n\tSourceFormat,\n} from \"./types\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "packages/core/src/graph/types.ts",
+      "functions": [],
+      "classes": [],
+      "methods": [],
+      "imports": []
+    },
+    {
+      "path": "packages/core/src/graph/grouping.ts",
+      "functions": [
+        "calculateDependencySignature",
+        "findLongestCommonPrefix",
+        "findCommonPattern",
+        "findCommonSuffix",
+        "generateGroupName",
+        "isConsumerService",
+        "isProducerService",
+        "isWorkerService",
+        "inferEdgeDirection",
+        "inferGroupEdgeDirection",
+        "groupByDependencyPath",
+        "getEdgeDirectionColor"
+      ],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "type {\n\tDependencyEdge,\n\tDependencyType,\n\tInfraGraph,\n\tServiceNode,\n\tServiceType,\n} from \"./types\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "packages/core/src/graph/index.ts",
+      "functions": [],
+      "classes": [],
+      "methods": [],
+      "imports": []
+    },
+    {
+      "path": "packages/core/src/output/png.ts",
+      "functions": [
+        "renderExcalidrawToPng",
+        "createExcalidrawExportHtml",
+        "renderExcalidrawToFile",
+        "calculateBoundingBox",
+        "renderExcalidrawAutoFit"
+      ],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "type { ExcalidrawFile } from \"../excalidraw/types\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "packages/core/src/output/mermaid.ts",
+      "functions": [
+        "getNodeShape",
+        "escapeLabel",
+        "getCategoryFromType",
+        "groupByCategory",
+        "formatCategoryName",
+        "graphToMermaid",
+        "graphToMermaidStyled",
+        "getStyleClass"
+      ],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "type { InfraGraph, ServiceNode, ServiceType } from \"../graph/types\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "packages/core/src/output/index.ts",
+      "functions": [],
+      "classes": [],
+      "methods": [],
+      "imports": []
+    },
+    {
+      "path": "packages/core/src/excalidraw/pathfinding.ts",
+      "functions": [
+        "createGrid",
+        "worldToGrid",
+        "gridToWorld",
+        "heuristic",
+        "getDirection",
+        "getNeighbors",
+        "isCollinear",
+        "simplifyPath",
+        "findNearestEmpty",
+        "findPath",
+        "markPathAsUsed",
+        "getEdgePoint",
+        "getBestEdge",
+        "createConnectionTracker",
+        "getConnectionOffset",
+        "findOrthogonalPath"
+      ],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "type { NodePosition } from \"./layout\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "packages/core/src/excalidraw/elk-render.ts",
+      "functions": [
+        "generateSeed",
+        "getServiceColors",
+        "getShapeType",
+        "createNodeElement",
+        "createNodeText",
+        "elkSectionToArrowPoints",
+        "extractNodeId",
+        "calculateFixedPoint",
+        "createArrowElement",
+        "buildElkNodeMap",
+        "renderWithElkLayout"
+      ],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "type { ElkEdgeSection, ElkGraph, ElkNode } from \"../elk/types\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "type { InfraGraph, ServiceNode, ServiceType } from \"../graph/types\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "type {\n\tExcalidrawArrow,\n\tExcalidrawDiamond,\n\tExcalidrawElement,\n\tExcalidrawEllipse,\n\tExcalidrawFile,\n\tExcalidrawRectangle,\n\tExcalidrawText,\n} from \"./types\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ LAYOUT_CONFIG, SERVICE_COLORS, SERVICE_SHAPES } from \"./types\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "packages/core/src/excalidraw/validate.test.ts",
+      "functions": [],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "{ describe, expect, test } from \"bun:test\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ readFile } from \"node:fs/promises\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ join } from \"node:path\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "type { InfraGraph } from \"../graph/types\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ renderToExcalidraw } from \"./render\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ isValidExcalidraw, validateExcalidraw } from \"./validate\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "packages/core/src/excalidraw/validate.ts",
+      "functions": [
+        "validateExcalidraw",
+        "isValidExcalidraw"
+      ],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "type { ExcalidrawElement, ExcalidrawFile } from \"./types\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "packages/core/src/excalidraw/resolution.test.ts",
+      "functions": [],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "{ describe, expect, test } from \"bun:test\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "type { InfraGraph } from \"../graph/types\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ renderAllResolutions, renderAtResolution } from \"./render\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "packages/core/src/excalidraw/types.ts",
+      "functions": [],
+      "classes": [],
+      "methods": [],
+      "imports": []
+    },
+    {
+      "path": "packages/core/src/excalidraw/layout.ts",
+      "functions": [
+        "calculateLayers",
+        "groupByLayer",
+        "sortNodesInLayer",
+        "calculateLayout",
+        "getNodeCenter",
+        "getConnectionPoint"
+      ],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "type { DependencyEdge, InfraGraph, ServiceNode } from \"../graph/types\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ LAYOUT_CONFIG } from \"./types\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "packages/core/src/excalidraw/render.ts",
+      "functions": [
+        "getCategoryFromType",
+        "generateSeed",
+        "generateId",
+        "getServiceColors",
+        "getServiceShape",
+        "createBaseElement",
+        "createShapeElement",
+        "createTextElement",
+        "calculateOrthogonalPath",
+        "calculateArrowPath",
+        "calculatePathBounds",
+        "getConnectionFocus",
+        "createArrowElement",
+        "renderServiceNode",
+        "renderServiceGroup",
+        "renderToExcalidraw",
+        "excalidrawToJson",
+        "renderGroupedToExcalidraw",
+        "renderServiceNodeWithBindings",
+        "renderServiceGroupWithBindings",
+        "groupNodesByCategory",
+        "groupNodesByGroupName",
+        "createExecutiveGraph",
+        "createGroupsGraph",
+        "renderAtResolution",
+        "renderAllResolutions"
+      ],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "type {\n\tDirectedEdge,\n\tEdgeDirection,\n\tGroupedGraph,\n\tServiceGroup,\n} from \"../graph/grouping\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ getEdgeDirectionColor, groupByDependencyPath } from \"../graph/grouping\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "type {\n\tInfraGraph,\n\tServiceNode,\n\tServiceType,\n} from \"../graph/types\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "type { ResolutionLevel } from \"../pipeline/types\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{\n\ttype NodePosition,\n\tcalculateLayout,\n\tgetConnectionPoint,\n\tgetNodeCenter,\n} from \"./layout\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{\n\ttype SemanticPosition,\n\tcalculateSemanticLayout,\n} from \"./semantic-layout\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ createGrid, findOrthogonalPath, createConnectionTracker, type ConnectionTracker, type Grid } from \"./pathfinding\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{\n\ttype ExcalidrawArrow,\n\ttype ExcalidrawDiamond,\n\ttype ExcalidrawElement,\n\ttype ExcalidrawEllipse,\n\ttype ExcalidrawFile,\n\ttype ExcalidrawRectangle,\n\ttype ExcalidrawText,\n\tLAYOUT_CONFIG,\n\tSERVICE_COLORS,\n\tSERVICE_SHAPES,\n} from \"./types\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "packages/core/src/excalidraw/index.ts",
+      "functions": [],
+      "classes": [],
+      "methods": [],
+      "imports": []
+    },
+    {
+      "path": "packages/core/src/excalidraw/semantic-layout.ts",
+      "functions": [
+        "countConnections",
+        "calculateNodeSize",
+        "detectServiceRole",
+        "findHelperParent",
+        "calculateSemanticLayout"
+      ],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "type {\n\tDependencyEdge,\n\tInfraGraph,\n\tServiceNode,\n\tServiceType,\n} from \"../graph/types\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "type { ServiceGroup } from \"../graph/grouping\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ LAYOUT_CONFIG } from \"./types\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "packages/core/src/excalidraw/render.test.ts",
+      "functions": [],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "{ describe, expect, test } from \"bun:test\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "type { InfraGraph } from \"../graph/types\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ calculateLayout } from \"./layout\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ renderToExcalidraw } from \"./render\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "packages/core/src/elk/types.ts",
+      "functions": [],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "type { ElkNode } from \"elkjs/lib/elk-api\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "packages/core/src/elk/convert.ts",
+      "functions": [
+        "getSemanticLayer",
+        "getNodeSize",
+        "getLabelDimensions",
+        "convertNode",
+        "infraGraphToElk",
+        "summarizeLayers"
+      ],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "type { InfraGraph, ServiceNode } from \"../graph/types\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "type { ElkPort } from \"./types\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{\n\tELK_LAYOUT_OPTIONS,\n\ttype ElkConversionResult,\n\ttype ElkEdge,\n\ttype ElkGraph,\n\ttype ElkNode,\n\ttype SemanticLayer,\n} from \"./types\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "packages/core/src/elk/layout.ts",
+      "functions": [
+        "runLayout"
+      ],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "{ spawn } from \"node:child_process\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ dirname, join } from \"node:path\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ fileURLToPath } from \"node:url\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "type { ElkGraph } from \"./types\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "packages/core/src/elk/layout.test.ts",
+      "functions": [],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "{ describe, expect, test } from \"bun:test\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "type { InfraGraph } from \"../graph/types\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ infraGraphToElk, summarizeLayers } from \"./convert\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ runLayout } from \"./layout\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "packages/core/src/elk/index.ts",
+      "functions": [],
+      "classes": [],
+      "methods": [],
+      "imports": []
+    },
+    {
+      "path": "packages/cli/src/index.ts",
+      "functions": [],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "{ Command } from \"commander\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ configCommand } from \"./commands/config\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ fetchCommand } from \"./commands/fetch\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ inspectCommand } from \"./commands/inspect\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ listCommand } from \"./commands/list\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ runCommand } from \"./commands/run\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "packages/cli/src/utils/output.ts",
+      "functions": [
+        "formatDuration",
+        "formatStepResult",
+        "formatRunSummary",
+        "formatGraphSummary",
+        "formatExcalidrawSummary"
+      ],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "type { ExcalidrawFile, InfraGraph } from \"@clarity/core\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "type { PipelineRun, StepResult } from \"@clarity/core\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "packages/cli/src/commands/inspect.ts",
+      "functions": [],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "{\n\tgetRunDir,\n\tlistRuns,\n\tloadExcalidrawFile,\n\tloadParsedGraph,\n\tloadRunMeta,\n} from \"@clarity/core\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ Command } from \"commander\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{\n\tformatExcalidrawSummary,\n\tformatGraphSummary,\n\tformatRunSummary,\n} from \"../utils/output\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "packages/cli/src/commands/config.ts",
+      "functions": [],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "{\n\tgetConfigPath,\n\tloadConfig,\n\tmaskApiKey,\n\tsaveConfig,\n} from \"@clarity/core\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ Command } from \"commander\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "packages/cli/src/commands/list.ts",
+      "functions": [
+        "loadProjects"
+      ],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "{ readdir } from \"node:fs/promises\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ join } from \"node:path\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ getTestDataDir, listRuns } from \"@clarity/core\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ Command } from \"commander\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "packages/cli/src/commands/run.ts",
+      "functions": [],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "{\n\tensureRunDir,\n\tgenerateRunId,\n\tgetApiKey,\n\tgetRunDir,\n\tloadParsedGraph,\n\trunEnhanceStep,\n\trunGenerateStep,\n\trunLayoutStep,\n\trunParseStep,\n\trunPipeline,\n} from \"@clarity/core\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ Command } from \"commander\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{\n\tformatExcalidrawSummary,\n\tformatGraphSummary,\n\tformatRunSummary,\n} from \"../utils/output\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    },
+    {
+      "path": "packages/cli/src/commands/fetch.ts",
+      "functions": [
+        "loadProjects",
+        "fetchFileFromGithub"
+      ],
+      "classes": [],
+      "methods": [],
+      "imports": [
+        {
+          "module": "{ ensureProjectDirs, writeSourceFile } from \"@clarity/core\"",
+          "names": [],
+          "is_from": false
+        },
+        {
+          "module": "{ Command } from \"commander\"",
+          "names": [],
+          "is_from": false
+        }
+      ]
+    }
+  ]
+}
