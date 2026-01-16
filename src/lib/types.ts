@@ -59,3 +59,28 @@ export interface ArchData {
 }
 
 export type ViewType = "structure" | "calls" | "arch";
+
+// Entry point classification from LLM analysis
+export type EntryPointType =
+  | "cli-command"
+  | "api-endpoint"
+  | "main"
+  | "event-handler"
+  | "export"
+  | "internal"
+  | "test";
+
+export interface EntryPointClassification {
+  file: string;
+  function: string;
+  isUserFacing: boolean;
+  type: EntryPointType;
+  description: string;
+  userAction: string | null;
+  confidence: number;
+}
+
+export interface ClassificationsData {
+  classifications: EntryPointClassification[];
+  analyzedAt: string;
+}
