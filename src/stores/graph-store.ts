@@ -20,6 +20,8 @@ interface GraphStore {
   hideTests: boolean;
   selectedEntryPoint: string | null; // Filter to show only calls from this entry point
   showOnlyUserFacing: boolean; // Filter to show only user-facing entry points
+  hideUtilities: boolean; // Filter to hide utility functions
+  utilityThreshold: number; // Functions with callCount > threshold are considered utilities
 
   // Analysis state
   isAnalyzing: boolean;
@@ -37,6 +39,8 @@ interface GraphStore {
   setHideTests: (hide: boolean) => void;
   setSelectedEntryPoint: (entryPoint: string | null) => void;
   setShowOnlyUserFacing: (show: boolean) => void;
+  setHideUtilities: (hide: boolean) => void;
+  setUtilityThreshold: (threshold: number) => void;
   setIsAnalyzing: (analyzing: boolean) => void;
   setAnalysisError: (error: string | null) => void;
   clearData: () => void;
@@ -55,6 +59,8 @@ export const useGraphStore = create<GraphStore>((set) => ({
   hideTests: true, // Hide test files by default
   selectedEntryPoint: null,
   showOnlyUserFacing: false,
+  hideUtilities: false,
+  utilityThreshold: 1, // callCount > 1 means called by 2+ places
   isAnalyzing: false,
   analysisError: null,
 
@@ -79,6 +85,8 @@ export const useGraphStore = create<GraphStore>((set) => ({
   setHideTests: (hide) => set({ hideTests: hide }),
   setSelectedEntryPoint: (entryPoint) => set({ selectedEntryPoint: entryPoint }),
   setShowOnlyUserFacing: (show) => set({ showOnlyUserFacing: show }),
+  setHideUtilities: (hide) => set({ hideUtilities: hide }),
+  setUtilityThreshold: (threshold) => set({ utilityThreshold: threshold }),
   setIsAnalyzing: (analyzing) => set({ isAnalyzing: analyzing }),
   setAnalysisError: (error) => set({ analysisError: error }),
   clearData: () =>

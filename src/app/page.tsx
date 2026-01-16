@@ -173,6 +173,10 @@ export default function Home() {
     setIsAnalyzing,
     analysisError,
     setAnalysisError,
+    hideUtilities,
+    setHideUtilities,
+    utilityThreshold,
+    setUtilityThreshold,
   } = useGraphStore();
 
   // Load demo data on mount
@@ -352,6 +356,32 @@ export default function Home() {
               checked={hideTests}
               onCheckedChange={setHideTests}
             />
+          </div>
+
+          <div className="space-y-2">
+            <div className="flex items-center justify-between">
+              <Label htmlFor="hide-utilities" className="text-sm">
+                Hide utilities
+              </Label>
+              <Switch
+                id="hide-utilities"
+                checked={hideUtilities}
+                onCheckedChange={setHideUtilities}
+              />
+            </div>
+            {hideUtilities && (
+              <div className="flex items-center gap-2 text-sm">
+                <span className="text-muted-foreground">Called by &gt;</span>
+                <input
+                  type="number"
+                  min={1}
+                  max={20}
+                  value={utilityThreshold}
+                  onChange={(e) => setUtilityThreshold(Number(e.target.value))}
+                  className="w-14 h-7 px-2 rounded border border-border bg-background text-center text-sm"
+                />
+              </div>
+            )}
           </div>
 
           {archData && archData.entry_layer.length > 0 && (
